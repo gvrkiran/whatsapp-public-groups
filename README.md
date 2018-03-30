@@ -1,9 +1,7 @@
-# whatsapp-public-groups
 
-Code and dataset from our ICWSM 2018 dataset paper <b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
+# Code and dataset from our ICWSM 2018 dataset paper <b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
 
-Code to get data from WhatsApp public groups.
-
+In the paper, we present a first look at what data can be collected from WhatsApp public groups.
 The following repository contains details of the data collection and an anonymised version of the dataset.
 For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/content/whatsapp.pdf">paper</a>.
 
