@@ -37,6 +37,7 @@ Step 3: Once you join the groups, the data gets collected on the Android device.
 * Copy the `key` file to a convenient location. This is the decryption key.
 
 * Then use the code in the `WhatsApp-Crypt12-Decrypter` folder to decrypt the database. Copy the `key` file to this folder.
+The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a href="https://github.com/EliteAndroidApps/WhatsApp-Crypt12-Decrypter/" target=_blank>here</a>.
 
 * Use the `decrypt12.py`. It takes the key file and the encrypted database as input. `python decrypt12.py key msgstore.db.crypt12 msgstore.db`. The decrypted database is stored in the file named `msgstore.db`.
 
