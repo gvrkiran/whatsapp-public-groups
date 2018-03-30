@@ -1,5 +1,11 @@
 # whatsapp-public-groups
-Code to get data from WhatsApp public groups
+
+Code and dataset from our ICWSM 2018 dataset paper <b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
+
+Code to get data from WhatsApp public groups.
+
+The following repository contains details of the data collection and an anonymised version of the dataset.
+For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/content/whatsapp.pdf">paper</a>.
 
 ## Pre-requisites
 
@@ -12,7 +18,7 @@ Code to get data from WhatsApp public groups
 Step 1: Collect a list of public WhatsApp groups for the problem you want to study.
 For instance, if you want to study how people have been using WhatsApp for job search, look for potential groups <a href="https://aileensoul.wordpress.com/2017/11/02/whatsapp-group-links-for-job-seekers/" target=_blank>here</a>.
 We also provide a list of ~3,000 groups that we could find on Google by looking for urls containing "chat.whatsapp.com".
-These groups represent a pretty diverse set of topics which we mention in the paper, including: sports, politics, entertainment, job search, etc.
+These groups represent a pretty diverse set of topics which we mention in the paper, including: sports, politics, entertainment, job search, etc. You can use the file `getGroupTitles.py` to get the group titles for a set of groups.
 
 Step 2: Once you have the list of groups that you want to join, use the script `joinWhatsappGroups.py`.
 The script uses a python library for browser automation called Selenium and simulates the process of joining the groups one by one using the web interface of WhatsApp (web.whatsapp.com).
@@ -26,7 +32,7 @@ Step 3: Once you join the groups, the data gets collected on the Android device.
 
 * The decrypted database is stored in a path that looks like this: `Device Storage/WhatsApp/Databases`, containing a filename `msgstore.db.crypt12`
 
-* Note that we recommend using a stand-alone phone that only can be used for this data collection, since rooting your phone is <a href="https://www.bullguard.com/bullguard-security-center/mobile-security/mobile-threats/android-rooting-risks.aspx"> not a great idea</a>.
+* Note that we recommend using a stand-alone phone that only can be used for this data collection, since rooting your phone is <a href="https://www.bullguard.com/bullguard-security-center/mobile-security/mobile-threats/android-rooting-risks.aspx target=_blank"> not a great idea</a>.
 
 * After you have rooted your phone, following the tons of tutorials available online, you can look for the decryption key on your phone.
 
@@ -41,13 +47,18 @@ The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a
 
 * Use the `decrypt12.py`. It takes the key file and the encrypted database as input. `python decrypt12.py key msgstore.db.crypt12 msgstore.db`. The decrypted database is stored in the file named `msgstore.db`.
 
+* If you reached till here, Congrats! Almost done! The file msgstore.db is a simple sqlite3 database which can be manipulated programmatically. You can browse the contents using a database browsing tool like <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> (on Linux, Mac and Windows). You can export the contents of the database to a tsv file using the file `saveDataAsTSV.py`. 
+
+## Data
+The dataset contains anonymised information.
+
 ## Contact
 
 For any questions regarding the data collection or the dataset itself, please contact Kiran Garimella (kiran.garimella@epfl.ch) or Gareth Tyson (gareth.tyson@qmul.ac.uk).
 
 ## Ethics note
 
-* The data collection process and the (anonymised) dataset provided here is only for research purposes.
+* The data collection process and the (anonymised) dataset provided here are only for research purposes.
 
 * Please understand what you are doing before doing any of the stuff mentioned above.
 
