@@ -8,3 +8,8 @@ Code to get data from WhatsApp public groups
 ## Data collection pipeline
 
 Step 1: Collect a list of public WhatsApp groups for the problem you want to study.
+
+
+## Ethics note
+
+The data collection process and the (anonymised) dataset provided here is only for research purposes.
