@@ -1,5 +1,5 @@
 
-#<b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
+#WhatsApp, Doc? A First Look at WhatsApp Public Group Data
 
 Code and dataset from our ICWSM 2018 dataset paper. 
 In the paper, we present a first look at what data can be collected from WhatsApp public groups.
