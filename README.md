@@ -1,6 +1,7 @@
 
-# Code and dataset from our ICWSM 2018 dataset paper <b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
+#<b>WhatsApp, Doc? A First Look at WhatsApp Public Group Data</b>.
 
+Code and dataset from our ICWSM 2018 dataset paper. 
 In the paper, we present a first look at what data can be collected from WhatsApp public groups.
 The following repository contains details of the data collection and an anonymised version of the dataset.
 For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/content/whatsapp.pdf">paper</a>.
@@ -8,8 +9,8 @@ For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/conte
 ## Pre-requisites
 
 1. A standalone Android phone. A rooted android phone will make your life much much easier.
-2. A mobile network connection - required to set up WhatsApp.
-3. Internet connection - to keep receiving messages.
+2. A mobile network connection (SIM card) - required to set up WhatsApp. One time requirement. You can re-use the SIM card after you activate WhatsApp.
+3. Internet connection - to keep receiving messages on the phone.
 
 ## Data collection pipeline
 
@@ -45,10 +46,12 @@ The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a
 
 * Use the `decrypt12.py`. It takes the key file and the encrypted database as input. `python decrypt12.py key msgstore.db.crypt12 msgstore.db`. The decrypted database is stored in the file named `msgstore.db`.
 
-* If you reached till here, Congrats! Almost done! The file msgstore.db is a simple sqlite3 database which can be manipulated programmatically. You can browse the contents using a database browsing tool like <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> (on Linux, Mac and Windows). You can export the contents of the database to a tsv file using the file `saveDataAsTSV.py`. 
+* If you reached until here, Congrats! Almost done! The file msgstore.db is a simple sqlite3 database which can be manipulated programmatically. You can browse the contents using a database browsing tool like <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> (on Linux, Mac and Windows). You can export the contents of the database to a tsv file using the file `saveDataAsTSV.py`. 
 
 ## Data
-The dataset contains anonymised information.
+The folder `dataset` contains the anonymised data we collected for around 5 months from 178 groups.
+We replaced phone numbers with random integers.
+
 
 ## Contact
 
