@@ -14,7 +14,7 @@ For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/conte
 ## Data collection pipeline
 
 Step 1: Collect a list of public WhatsApp groups for the problem you want to study.
-For instance, if you want to study how people have been using WhatsApp for job search, look for potential groups <a href="https://aileensoul.wordpress.com/2017/11/02/whatsapp-group-links-for-job-seekers/" target=_blank>here</a>.
+For instance, if you want to study how people have been using WhatsApp for job search, look for potential groups <a href="https://aileensoul.wordpress.com/2017/11/02/whatsapp-group-links-for-job-seekers/" target="_blank">here</a>.
 We also provide a list of ~3,000 groups that we could find on Google by looking for urls containing "chat.whatsapp.com".
 These groups represent a pretty diverse set of topics which we mention in the paper, including: sports, politics, entertainment, job search, etc. You can use the file `getGroupTitles.py` to get the group titles for a set of groups.
 
@@ -26,7 +26,8 @@ A one-time user input is required to scan the QR code needed to log into WhatsAp
 
 * Note 2: We tried this script with only 178 groups. I am not sure if the script can handle a much larger set, like joining 1000 groups.
 
-Step 3: Once you join the groups, the data gets collected on the Android device. The data is stored on the device in an encrypted database. The next challenge is to decrypt the database and extract the messages. It is much much easier to decrypt the database if your phone is rooted. The process to follow is <a href="http://jameelnabbo.com/breaking-whatsapp-encryption-exploit/" target=_blank>here</a>. The process for unrooted Android phones is <a href="https://forum.xda-developers.com/showthread.php?t=2770982" target=_blank>here</a> and the code <a href="https://github.com/EliteAndroidApps/WhatsApp-Key-DB-Extractor" target=_blank>here</a> (We haven't tested these, and so can't vouch for them). We describe the process for rooted phones below:
+Step 3: Once you join the groups, the data gets collected on the Android device. The data is stored on the device in an encrypted database. The next challenge is to decrypt the database and extract the messages. It is much much easier to decrypt the database if your phone is rooted. 
+The process for unrooted Android phones is <a href="https://forum.xda-developers.com/showthread.php?t=2770982" target=_blank>here</a> and the code <a href="https://github.com/EliteAndroidApps/WhatsApp-Key-DB-Extractor" target=_blank>here</a> (We haven't tested these, and so can't vouch for them). We describe the process for rooted phones below:
 
 * The decrypted database is stored in a path that looks like this: `Device Storage/WhatsApp/Databases`, containing a filename `msgstore.db.crypt12`
 
@@ -47,9 +48,33 @@ The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a
 
 * If you reached until here, Congrats! Almost done! The file msgstore.db is a simple sqlite3 database which can be manipulated programmatically. You can browse the contents using a database browsing tool like <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> (on Linux, Mac and Windows). You can export the contents of the database to a tsv file using the file `saveDataAsTSV.py`. 
 
+* The above process was partly gathered from <a href="http://jameelnabbo.com/breaking-whatsapp-encryption-exploit/" target=_blank>here</a>. 
+
 ## Data
-The folder `dataset` contains the anonymised data we collected for around 5 months from 178 groups.
-We replaced phone numbers with random integers.
+Due to the sensitive nature of the data (containing phone numbers), we decided to release an anonymised version of the data. 
+The file `anonymised_data_to_share.tsv` contains the anonymised data we collected for around 5 months from around 178 groups.
+We are not sharing the original message content due to potential sensitive information contained in them. <b>However, if you are a researcher/academic who wants access to the actual message content (for research purposes only), please send an email to Kiran Garimella (kiran.garimella@epfl.ch)</b>. 
+The tab separated file contains over 300,000 messages, including the following fields:
+
+* Group ID - Unique identifier of a group. Anonymised by replacing the original group id with a unique random integer for a group
+
+* Phone number - Anonymised phone number, replaced by a unique random integer and the 2 letter country code (ISO 3166-1 alpha-2) of the phone.
+
+* message length - number of characters in the message.
+
+* message lang - Language of the message, automatically inferred using <a href="https://github.com/saffsd/langid.py">this</a> tool. Note that the detection might not be completely accurate, especially since the messages have a lot of emojis and are typically short.
+
+* timestamp - the unix timestamp when the message was sent.
+
+* media url - URL contained in the message
+
+* media mime type - image/video or audio
+
+* media size - size of the media in bytes
+
+* media name - in case of urls shared, whatsapp fetches the title of the page. This field contains the title.
+
+* media caption - contains the short snippet metadata about the url.
 
 
 ## Contact
