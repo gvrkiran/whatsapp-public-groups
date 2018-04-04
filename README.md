@@ -8,7 +8,7 @@ For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/conte
 ## Pre-requisites
 
 1. A standalone Android phone. A rooted android phone will make your life much much easier.
-2. A mobile network connection (SIM card) - required to set up WhatsApp. One time requirement. You can re-use the SIM card after you activate WhatsApp.
+2. A mobile network connection (SIM card) - required to set up WhatsApp. This is a one time requirement. You can re-use the SIM card after you activate WhatsApp.
 3. Internet connection - to keep receiving messages on the phone.
 
 ## Data collection pipeline
@@ -18,8 +18,9 @@ For instance, if you want to study how people have been using WhatsApp for job s
 We also provide a list of ~3,000 groups that we could find on Google by looking for urls containing "chat.whatsapp.com".
 These groups represent a pretty diverse set of topics which we mention in the paper, including: sports, politics, entertainment, job search, etc. You can use the file `getGroupTitles.py` to get the group titles for a set of groups.
 
-Step 2: Once you have the list of groups that you want to join, use the script `joinWhatsappGroups.py`.
-The script uses a python library for browser automation called Selenium and simulates the process of joining the groups one by one using the web interface of WhatsApp (web.whatsapp.com).
+Step 2: Set up a stand-alone Android device with WhatsApp installed and the phone number validated. 
+Then, once you have the list of groups that you want to join, use the script `joinWhatsappGroups.py`.
+The script uses a python library for browser automation called Selenium and simulates the process of joining the groups one by one using the web interface of WhatsApp (web.whatsapp.com). Note that, to use web.whatsapp.com, the phone should be connected to the internet.
 A one-time user input is required to scan the QR code needed to log into WhatsApp on the browser.
 
 * Note 1: If you have a small number of groups (say, 10), you can skip this step and do the joining manually.
@@ -54,13 +55,15 @@ The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a
 Due to the sensitive nature of the data (containing phone numbers), we decided to release an anonymised version of the data. 
 The file `anonymised_data_to_share.tsv` contains the anonymised data we collected for around 5 months from around 178 groups.
 We are not sharing the original message content due to potential sensitive information contained in them. <b>However, if you are a researcher/academic who wants access to the actual message content (for research purposes only), please send an email to Kiran Garimella (kiran.garimella@epfl.ch)</b>. 
-The tab separated file contains over 300,000 messages, including the following fields:
+The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anonymised_data_to_share.tsv">publicly released version</a> of the dataset is within a tab separated file that contains over 300,000 messages, with the following fields:
 
 * Group ID - Unique identifier of a group. Anonymised by replacing the original group id with a unique random integer for a group
 
 * Phone number - Anonymised phone number, replaced by a unique random integer and the 2 letter country code (ISO 3166-1 alpha-2) of the phone.
 
 * message length - number of characters in the message.
+
+* message num words - number of words in the message.
 
 * message lang - Language of the message, automatically inferred using <a href="https://github.com/saffsd/langid.py">this</a> tool. Note that the detection might not be completely accurate, especially since the messages have a lot of emojis and are typically short.
 
@@ -83,7 +86,9 @@ For any questions regarding the data collection or the dataset itself, please co
 
 ## Ethics note
 
-* The data collection process and the (anonymised) dataset provided here are only for research purposes.
+* The data collection process and the (anonymised) dataset provided here are only for research purposes. 
+
+* We do not release the original message content publicly. If you are interested in the content, for research purposes, please contact us. 
 
 * As we note in the <a href="https://users.ics.aalto.fi/kiran/content/whatsapp.pdf">paper</a>, any member of a group (public or not) is allowed according to WhatsApp legal restrictions to export group message data. Since we were a member of the group when collecting the data, we do not break the WhatsApp privacy policy rules.
 
