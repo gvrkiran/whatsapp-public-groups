@@ -85,6 +85,6 @@ For any questions regarding the data collection or the dataset itself, please co
 
 * The data collection process and the (anonymised) dataset provided here are only for research purposes.
 
-* Please understand what you are doing before doing any of the stuff mentioned above.
+* As we note in the <a href="https://users.ics.aalto.fi/kiran/content/whatsapp.pdf">paper</a>, any member of a group (public or not) is allowed according to WhatsApp legal restrictions to export group message data. Since we were a member of the group when collecting the data, we do not break the WhatsApp privacy policy.
 
-* Use the tools mentioned above at your own risk. We do not take any responsibility.
+* Please understand what you are doing before doing any of the stuff mentioned above. Use the tools mentioned above at your own risk. We do not take any responsibility.
