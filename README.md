@@ -82,7 +82,9 @@ The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anon
 
 ## Contact
 
-For any questions regarding the data collection or the dataset itself, please contact Kiran Garimella (kiran.garimella@epfl.ch) or Gareth Tyson (gareth.tyson@qmul.ac.uk).
+* For any questions regarding the data collection or the dataset itself, please contact Kiran Garimella (EPFL, kiran.garimella@epfl.ch) or Gareth Tyson (Queen Mary University, gareth.tyson@qmul.ac.uk).
+
+* Please cite our ICWSM 2018 paper if you use the dataset.
 
 ## Ethics note
 
