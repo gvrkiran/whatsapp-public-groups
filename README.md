@@ -15,7 +15,7 @@ For details, please refer to our <a href="https://users.ics.aalto.fi/kiran/conte
 
 Step 1: Collect a list of public WhatsApp groups for the problem you want to study.
 For instance, if you want to study how people have been using WhatsApp for job search, look for potential groups <a href="https://aileensoul.wordpress.com/2017/11/02/whatsapp-group-links-for-job-seekers/" target="_blank">here</a>.
-We also provide a list of ~3,000 groups that we could find on Google by looking for urls containing "chat.whatsapp.com".
+We also provide a list of ~3,000 groups that we could find on Google by looking for urls containing "chat.whatsapp.com" (`whatsapp_group_links.txt`).
 These groups represent a pretty diverse set of topics which we mention in the paper, including: sports, politics, entertainment, job search, etc. You can use the file `getGroupTitles.py` to get the group titles for a set of groups.
 
 Step 2: Set up a stand-alone Android device with WhatsApp installed and the phone number validated. 
