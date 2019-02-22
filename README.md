@@ -54,7 +54,7 @@ The WhatsApp-Crypt12-Decrypter code was obtained (and slightly modified) from <a
 ## Data
 Due to the sensitive nature of the data (containing phone numbers), we decided to release an anonymised version of the data. 
 The file `anonymised_data_to_share.tsv` contains the anonymised data we collected for around 5 months from around 178 groups.
-We are not sharing the original message content due to potential sensitive information contained in them. <b>However, if you are a researcher/academic who wants access to the actual message content (for research purposes only), please send an email to Kiran Garimella (kiran.garimella@epfl.ch)</b>. 
+We are not sharing the original message content due to potential sensitive information contained in them. <b>However, if you are a researcher/academic who wants access to the actual message content (for research purposes only), please send an email to Kiran Garimella (kiran.garimella@aalto.ch)</b>. 
 The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anonymised_data_to_share.tsv">publicly released version</a> of the dataset is within a tab separated file that contains over 300,000 messages, with the following fields:
 
 * Group ID - Unique identifier of a group. Anonymised by replacing the original group id with a unique random integer for a group
@@ -79,10 +79,13 @@ The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anon
 
 * media caption - contains the short snippet metadata about the url.
 
+## Update 22nd Feb 2019
+We now have tools to collect multimedia data too (image and video). Contact Kiran for the scripts.
+
 
 ## Contact
 
-* For any questions regarding the data collection or the dataset itself, please contact Kiran Garimella (EPFL, kiran.garimella@epfl.ch) or Gareth Tyson (Queen Mary University, gareth.tyson@qmul.ac.uk).
+* For any questions regarding the data collection or the dataset itself, please contact Kiran Garimella (EPFL, kiran.garimella@aalto.ch) or Gareth Tyson (Queen Mary University, gareth.tyson@qmul.ac.uk).
 
 * Please cite our ICWSM 2018 paper if you use the dataset.
 
