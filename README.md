@@ -80,8 +80,18 @@ The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anon
 * media caption - contains the short snippet metadata about the url.
 
 ## Update 22nd Feb 2019
-We now have tools to collect multimedia data too (image and video). Contact Kiran for the scripts.
+We now have tools to collect multimedia data too (image and video). 
 
+Here's a rough pipeline. You might have to tweak the python script to get this working
+
+We need to follow two steps
+
+1. run the java file Search.java (first compile it) to obtain the mediakey
+export CLASSPATH=/mnt/kiran/whatsapp/sqlite-jdbc-3.23.1.jar:$CLASSPATH
+
+java Search <database_filename> (e.g. msgstore.db) | sort -u > url_mediakey.txt
+
+2. downloadEncImage.py will download the encrypted images
 
 ## Contact
 
