@@ -81,6 +81,7 @@ The <a href="https://github.com/gvrkiran/whatsapp-public-groups/blob/master/anon
 
 ## Update 22nd Feb 2019
 We now have tools to collect multimedia data too (image and video). 
+(NOTE: We just put together scripts from multiple sources to create these scripts. I am not the author of any of these. I do not claim ownership.)
 
 Here's a rough pipeline. You might have to tweak the python script to get this working
 
