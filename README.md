@@ -87,12 +87,17 @@ Here's a rough pipeline. You might have to tweak the python script to get this w
 
 We need to follow two steps
 
-1. run the java file Search.java (first compile it) to obtain the mediakey
-export CLASSPATH=/mnt/kiran/whatsapp/sqlite-jdbc-3.23.1.jar:$CLASSPATH
+0. Download the sqlite jdbc jar file.
+
+1. export CLASSPATH=/mnt/kiran/whatsapp/sqlite-jdbc-3.23.1.jar:$CLASSPATH (path to the sqlite jdbc jar.)
+
+2. Compile the java file javac Search.java
+
+3. run the java file Search.java to obtain the mediakey
 
 java Search <database_filename> (e.g. msgstore.db) | sort -u > url_mediakey.txt
 
-2. downloadEncImage.py will download the encrypted images
+4. downloadEncImage.py will download the encrypted images
 
 ## Contact
 
